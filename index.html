@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "selector",
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Portfolio</title>
+  </head>
+  <body
+    class="dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen transition-colors duration-300"
+  >
+    <!-- Header Section -->
+    <header class="sticky top-0 bg-opacity-90 backdrop-blur-lg">
+      <nav
+        class="flex justify-between items-center container max-w-4xl mx-auto px-6 py-3"
+      >
+        <div class="flex items-center space-x-4">
+          <h1 class="text-2xl font-bold animate-bounce">Hoon</h1>
+          <p class="text-sm text-gray-500 animate-pulse dark:text-gray-300">
+            Frontend Developer
+          </p>
+        </div>
+        <div class="hidden md:flex items-center gap-x-6">
+          <a href="#home" class="hover:text-blue-500 transition-colors">Home</a>
+          <a href="#about" class="hover:text-blue-500 transition-colors"
+            >About me</a
+          >
+          <a href="#skills" class="hover:text-blue-500 transition-colors"
+            >Skills</a
+          >
+          <a href="#projects" class="hover:text-blue-500 transition-colors"
+            >Projects</a
+          >
+          <a href="#contact" class="hover:text-blue-500 transition-colors"
+            >Contact</a
+          >
+          <!-- Dark Mode -->
+          <button
+            id="darkModeToggle"
+            class="p-2 w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
+          >
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+          </button>
+        </div>
+        <!-- Toggle Button -->
+        <button
+          id="menuToggle"
+          class="md:hidden p-2 text-gray-700 dark:text-white"
+        >
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </nav>
+    </header>
+    <!-- Sidebar -->
+    <aside
+      id="mobileMenu"
+      class="block md:hidden fixed right-0 inset-y-0 bg-white w-64 dark:bg-gray-800 shadow-lg translate-x-full transition-transform duration-300 z-20"
+    >
+      <button id="closeMenu" class="p-2 m-4 text-gray-700 dark:text-white">
+        <i class="fas fa-times text-2xl"></i>
+      </button>
+      <nav class="flex flex-col space-y-4 mt-10 px-6">
+        <a href="#home" class="hover:text-blue-500 transition-colors">Home</a>
+        <a href="#about" class="hover:text-blue-500 transition-colors"
+          >About me</a
+        >
+        <a href="#skills" class="hover:text-blue-500 transition-colors"
+          >Skills</a
+        >
+        <a href="#projects" class="hover:text-blue-500 transition-colors"
+          >Projects</a
+        >
+        <a href="#contact" class="hover:text-blue-500 transition-colors"
+          >Contact</a
+        >
+        <!-- Dark Mode -->
+        <button
+          id="darkModeToggleMobile"
+          class="p-2 w-full rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
+        >
+          <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+        </button>
+      </nav>
+    </aside>
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <!-- Home Section -->
+      <section
+        id="home"
+        class="flex flex-col md:flex-row justify-between items-center mb-12"
+      >
+        <div class="shrink-0 mb-6 md:mb-0 md:mr-10">
+          <img
+            src="/images/profile.jpeg"
+            alt="Profile"
+            class="w-56 h-56 rounded-full border-2"
+          />
+        </div>
+        <div class="text-center md:text-right">
+          <h1 class="text-4xl font-bold mb-2">Hoon</h1>
+          <p class="text-xl mb-4">생각하는 개발자</p>
+          <p class="text-gray-700 mb-4 dark:text-gray-400">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa,
+            nemo dolorum tempore magni perferendis rerum autem labore laudantium
+            quaerat blanditiis quas! Vel voluptates sit totam, voluptate fuga
+            facilis dicta inventore!
+          </p>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">About me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article
+            class="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-xl font-semibold mb-4">👨‍🎓 Learning & Activities</h3>
+            <ul class="text-gray-800 dark:text-gray-300 leading-relaxed">
+              <li>🚀 2025 프로그래머스 프론트엔드 부트캠프 수료</li>
+            </ul>
+          </article>
+          <article
+            class="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-xl font-semibold mb-4">👨‍💻 Certifications</h3>
+            <ul class="text-gray-800 dark:text-gray-300 leading-relaxed">
+              <li>...</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section id="skills" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">Skills</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-html5 text-4xl text-red-500 mb-1"></i>
+            <h3 class="text-lg font-semibold">HTML5</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-css3-alt text-4xl text-blue-500 mb-1"></i>
+            <h3 class="text-lg font-semibold">CSS3</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-js text-4xl text-yellow-500 mb-1"></i>
+            <h3 class="text-lg font-semibold">JavaScript</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-react text-4xl text-blue-400 mb-1"></i>
+            <h3 class="text-lg font-semibold">React</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <i class="fa-brands fa-vuejs text-4xl text-green-700 mb-1"></i>
+            <h3 class="text-lg font-semibold">Vue.js</h3>
+          </div>
+          <div
+            class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+          >
+            <img src="/images/typescript_logo.png" class="h-12 w-12" />
+            <h3 class="text-lg font-semibold">TypeScript</h3>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section -->
+      <section id="projects" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">Projects</h2>
+        <!-- 유튜브 기반 음악 공유 SNS 플랫폼 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article
+            class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform durateion-300"
+          >
+            <img
+              src="/images/vive.png"
+              alt="유튜브 기반 음악 공유 SNS 플랫폼"
+              class="w-full h-48"
+            />
+
+            <div class="p-6">
+              <h3
+                class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100"
+              >
+                🎵 유튜브 기반 음악 공유 SNS 플랫폼
+              </h3>
+
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                  >React</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                  >TypeScript</span
+                >
+                <span
+                  class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                  >TailwindCSS</span
+                >
+              </div>
+              <div class="flex justify-end space-x-2">
+                <a
+                  href="#"
+                  class="bg-gray-800 dark:bg-gray-300 rounded-md px-3 py-1 text-white dark:text-gray-800 text-sm"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="bg-blue-600 rounded-md px-3 py-1 text-white text-sm"
+                  >Live Demo</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Baseball Community platform -->
+          <div>
+            <article
+              class="bg-gray-100 rounded-lg dark:bg-gray-800 shadow-lg overflow-hidden hover:scale-105 transition-transform durateion-300"
+            >
+              <img
+                src="/images/dugout.png"
+                alt="야구 커뮤니티 플랫폼"
+                class="w-full h-48"
+              />
+
+              <div class="p-6">
+                <h3
+                  class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100"
+                >
+                  ⚾️ 야구 커뮤니티 플랫폼
+                </h3>
+
+                <div class="space-x-2 mb-4">
+                  <span
+                    class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                    >Vue.js</span
+                  >
+                  <span
+                    class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                    >TailwindCSS</span
+                  >
+                </div>
+                <div class="flex justify-end space-x-2">
+                  <a
+                    href="#"
+                    class="bg-gray-800 dark:bg-gray-300 rounded-md px-3 py-1 text-white dark:text-gray-800 text-sm"
+                    >GitHub</a
+                  >
+                  <a
+                    href="#"
+                    class="bg-blue-600 rounded-md px-3 py-1 text-white text-sm"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- 문화 생활 플랫폼 -->
+          <div>
+            <article
+              class="bg-gray-100 rounded-lg dark:bg-gray-800 shadow-lg overflow-hidden hover:scale-105 transition-transform durateion-300"
+            >
+              <img
+                src="/images/onculture.png"
+                alt="문화 생활 플랫폼"
+                class="w-full h-48"
+              />
+
+              <div class="p-6">
+                <h3
+                  class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100"
+                >
+                  🖼️ 문화 생활 플랫폼 (반응형)
+                </h3>
+
+                <div class="space-x-2 mb-4">
+                  <span
+                    class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                    >React</span
+                  >
+                  <span
+                    class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-700 dark:text-gray-300 border border-gray-600 dark:border-"
+                    >TailwindCSS</span
+                  >
+                </div>
+                <div class="flex justify-end space-x-2">
+                  <a
+                    href="#"
+                    class="bg-gray-800 dark:bg-gray-300 rounded-md px-3 py-1 text-white dark:text-gray-800 text-sm"
+                    >GitHub</a
+                  >
+                  <a
+                    href="#"
+                    class="bg-blue-600 rounded-md px-3 py-1 text-white text-sm"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">Contact</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <form id="contactForm" class="space-y-4">
+            <div>
+              <label for="name" class="block mb-1 font-medium">name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="dark:bg-gray-700 dark:border-gray-600 dark:text-white w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="email" class="block mb-1 font-medium">email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="dark:bg-gray-700 dark:border-gray-600 dark:text-white w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="message" class="block mb-1 font-medium"
+                >message</label
+              >
+              <textarea
+                type="text"
+                id="message"
+                name="message"
+                required
+                class="dark:bg-gray-700 dark:border-gray-600 dark:text-white w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+              >
+              </textarea>
+            </div>
+            <button
+              type="submit"
+              class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-500 transition-colors"
+            >
+              이메일 보내기
+            </button>
+          </form>
+
+          <div class="flex flex-col justify-center items-center gap-y-4">
+            <a
+              href="#"
+              target="_blank"
+              class="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-youtube"></i>
+              <span>Youtube</span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="dark:text-gray-300 flex items-center space-x-2 text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-regular fa-envelope"></i>
+              <span>wangjh921010@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-100 dark:bg-gray-800 w-full h-20">
+      <div class="container max-w-4xl mx-auto px-6 text-center py-4">
+        <p>&copy 2025 hoon. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      function initialTheme() {
+        const darkModeToggleIcon = document
+          .getElementById("darkModeToggle")
+          .querySelector("i");
+        if (localStorage.theme === "dark") {
+          document.documentElement.classList.add("dark");
+          darkModeToggleIcon.className = "fas fa-sun text-yellow-400";
+        } else {
+          document.documentElement.classList.remove("dark");
+          darkModeToggleIcon.className = "fas fa-moon text-gray-700";
+        }
+      }
+      function toggleDarkMode() {
+        const darkModeToggleIcon = document
+          .getElementById("darkModeToggle")
+          .querySelector("i");
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+          darkModeToggleIcon.className = "fas fa-moon text-gray-700";
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+          darkModeToggleIcon.className = "fas fa-sun text-yellow-400";
+        }
+      }
+      function toggleDarkModeMobile() {
+        const darkModeToggleIcon = document
+          .getElementById("darkModeToggleMobile")
+          .querySelector("i");
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+          darkModeToggleIcon.className = "fas fa-moon text-gray-700";
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+          darkModeToggleIcon.className = "fas fa-sun text-yellow-400";
+        }
+      }
+      document
+        .getElementById("darkModeToggle")
+        .addEventListener("click", toggleDarkMode);
+
+      document
+        .getElementById("darkModeToggleMobile")
+        .addEventListener("click", toggleDarkModeMobile);
+      const mobileMenu = document.getElementById("mobileMenu");
+      // Mobile Menu Toggle
+      document.getElementById("menuToggle").addEventListener("click", () => {
+        mobileMenu.classList.toggle("translate-x-full");
+      });
+      document.getElementById("closeMenu").addEventListener("click", () => {
+        mobileMenu.classList.toggle("translate-x-full");
+      });
+      initialTheme();
+    </script>
+  </body>
+</html>
